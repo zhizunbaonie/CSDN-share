@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>9-理解update,enter.exit的使用</title>
+</head>
+<body>
+<p></p>
+<p></p>
+<p></p>
+<script src="lib/d3.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+    /*Update 和 Enter 的使用:
+    * 当对应的元素不足时 （ 绑定数据数量 > 对应元素 ），需要添加元素（append）。
+    * */
+
+     /*var dataset = [ 3 , 6 , 9 , 12 , 15 ];
+    //选择body中的p元素
+    var p = d3.select("body").selectAll("p");
+    //获取update部分
+    var update = p.data(dataset);
+    //获取enter部分
+    var enter = update.enter();
+    //update部分的处理：更新属性值
+    update.text(function(d){
+        return "update " + d;
+    });
+    //enter部分的处理：添加元素后赋予属性值
+    enter.append("p")
+            .text(function(d){
+                return "enter " + d;
+            });*/
+
+
+    /*Update 和 Exit 的使用:
+    * 当对应的元素过多时 （ 绑定数据数量 < 对应元素 ），需要删掉多余的元素。
+    * */
+
+     var dataset = [ 3 ];
+
+    //选择body中的p元素
+    var p = d3.select("body").selectAll("p");
+
+    //获取update部分
+    var update = p.data(dataset);
+
+    //获取exit部分
+    var exit = update.exit();
+
+    //update部分的处理：更新属性值
+    update.text(function(d){
+        return "update " + d;
+    });
+
+    //exit部分的处理：修改p元素的属性
+    exit.text(function(d){
+        return "exit";
+    });
+
+    //exit部分的处理通常是删除元素
+    // exit.remove();
+</script>
+</body>
+</html>

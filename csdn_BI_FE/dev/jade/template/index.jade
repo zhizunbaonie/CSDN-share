@@ -1,0 +1,109 @@
+extends ../layout/layout
+block head
+    title BI-概况
+block body
+    #index2.content
+        .row.tit
+            .col-lg-8.col-md-8.col-sm-8.col-xs-8
+                h4
+                    i.fa.fa-angle-right
+                    | 概况
+            .col-lg-4.col-md-4.col-sm-4.col-xs-4.text-right
+                .btn
+                    a(href="javascript:;")
+                        | 创建自定义报告
+                        i.fa.fa-pencil-square-o
+        hr
+        .panel.data_chart
+            .panel-heading.row
+                .col-lg-8.col-md-8.col-sm-8.col-xs-8
+                    span 概况
+                .col-lg-4.col-md-4.col-sm-4.col-xs-4.ri_tit.text-right
+                    .time_toggle
+                        i.fa.fa-clock-o
+                        span.txt 选择时间对比
+                        span.hide_ico
+                    .time_setting.text-left
+                        .dur_set
+                            .duration
+                                label(for="#sel_setting") 日期范围
+                                select#sel_setting.sel_setting
+                                    option 自定义
+                            .timeset
+                                input#start(type="text" onfocus="setday(this)" readonly="readonly")
+                                span --
+                                input#end(type="text" onfocus="setday(this)" readonly="readonly")
+                        .dur_set
+                            .duration
+                                input(type="checkbox")
+                                label 比较日期范围
+                            .timeset
+                                input#start(type="text" onfocus="setday(this)" readonly="readonly")
+                                span --
+                                input#end(type="text" onfocus="setday(this)" readonly="readonly")
+                        .is_apply
+                            .btn
+                                | 应用
+                            .btn
+                                | 取消
+            .panel-body
+                .row
+                    .col-lg-8.col-md-8.col-sm-8.col-xs-8
+                        .btn-group
+                            button.btn.btn-default.dropdown-toggle(data-toggle="dropdown" type="button")
+                                | 对比指标1&nbsp&nbsp
+                                span.caret
+                            ul.dropdown-menu
+                                li
+                                    a(href="javascript:;") 按钮1
+                                li
+                                    a(href="javascript:;") 按钮2
+                        .btn-group
+                            button.btn.btn-default.dropdown-toggle(data-toggle="dropdown" type="button")
+                                | 对比指标2&nbsp&nbsp
+                                span.caret
+                            ul.dropdown-menu
+                                li
+                                    a(href="javascript:;") 按钮1
+                                li
+                                    a(href="javascript:;") 按钮2
+                    .col-lg-4.col-md-4.col-sm-4.col-xs-4.timer_group.text-right
+                        .btn
+                            span 日
+                        .btn
+                            span 周
+                        .btn
+                            span 年
+                #general.chart
+        .data_grid
+            table.table.table-triped
+                thead
+                    tr
+                        - var aH = ['dt', 'pv', 'uv','活跃用户数','时长','平均页面数','总收入','总课程数','总学员数']
+                        each vH,index in aH
+                            th=vH
+                tbody
+                    - for (var x = 1; x < 9; x++)
+                        tr
+                            td 201
+                            td 223
+                            td 233
+                            td 456
+                            td 36小时
+                            td 8个
+                            td 1253￥
+                            td 8课时
+                            td 56人
+        .data_export.text-right
+            span 导出支持图形和数据
+            .btn
+                | 导出
+                i.fa.fa-share-square
+    include ../template/trafficSrc
+    include ../template/trafficSrc_seeTrends
+    include ../template/pageSrc
+    include ../template/upDown
+    include ../template/convFunnel
+    include ../template/newCustomReport
+    include ../template/customReport
+

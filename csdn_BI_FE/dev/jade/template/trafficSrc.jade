@@ -1,0 +1,131 @@
+#index3_1.noShow.content
+    .row.tit
+        .col-lg-8.col-md-8.col-sm-8.col-xs-8
+            h4
+                i.fa.fa-angle-right
+                | 流量来源渠道
+        .col-lg-4.col-md-4.col-sm-4.col-xs-4.text-right
+            .btn
+                a(href="javascript:;")
+                    | 创建自定义报告
+                    i.fa.fa-pencil-square-o
+    hr
+    .panel.data_chart
+        .panel-heading.row
+            .col-lg-8.col-md-8.col-sm-8.col-xs-8
+                .sel_chart
+                    button.dropdown-toggle(data-toggle="dropdown" type="button")
+                        span.txt 选择图形
+                        span.caret
+                    ul.dropdown-menu(role="menu" aria-labelledby="dropdownMenu1")
+                        li(role="presentation")
+                            a(role="menuitem", tabindex="-1", href="javascript:void(0);") 柱状图
+                        li(role="presentation")
+                            a(role="menuitem", tabindex="-1", href="javascript:void(0);") 饼图
+                        li(role="presentation")
+                            a(role="menuitem", tabindex="-1", href="javascript:void(0);") 线图
+            .col-lg-4.col-md-4.col-sm-4.col-xs-4.ri_tit.text-right
+                .time_toggle
+                    i.fa.fa-clock-o
+                    span.txt 选择时间对比
+                    span.hide_ico
+                .time_setting.text-left
+                    .dur_set
+                        .duration
+                            label(for="#sel_setting") 日期范围
+                            select#sel_setting.sel_setting
+                                option 自定义
+                        .timeset
+                            input#start(type="text" onfocus="setday(this)" readonly="readonly")
+                            span --
+                            input#end(type="text" onfocus="setday(this)" readonly="readonly")
+                    .dur_set
+                        .duration
+                            input(type="checkbox")
+                            label 比较日期范围
+                        .timeset
+                            input#start(type="text" onfocus="setday(this)" readonly="readonly")
+                            span --
+                            input#end(type="text" onfocus="setday(this)" readonly="readonly")
+                    .is_apply
+                        .btn
+                            | 应用
+                        .btn
+                            | 取消
+        .panel-body
+            .row.chart-tit
+                .col-lg-4.col-md-4.col-sm-4.col-xs-4
+                    label 来源类型：
+                    .btn-group
+                        button.btn.btn-default.dropdown-toggle(data-toggle="dropdown" type="button")
+                            | 百度&nbsp&nbsp
+                            span.caret
+                        ul.dropdown-menu
+                            li
+                                a(href="javascript:;") 按钮1
+                            li
+                                a(href="javascript:;") 按钮2
+                    .btn-group
+                        button.btn.btn-default.dropdown-toggle(data-toggle="dropdown" type="button")
+                            | 来源类型&nbsp&nbsp
+                            span.caret
+                        ul.dropdown-menu
+                            li
+                                a(href="javascript:;") 按钮1
+                            li
+                                a(href="javascript:;") 按钮2
+                .col-lg-4.col-md-4.col-sm-4.col-xs-4
+                    label 指标：
+                    .btn-group
+                        button.btn.btn-default.dropdown-toggle(data-toggle="dropdown" type="button")
+                            | 浏览量&nbsp&nbsp
+                            span.caret
+                        ul.dropdown-menu
+                            li
+                                a(href="javascript:;") 按钮1
+                            li
+                                a(href="javascript:;") 按钮2
+                    .btn-group
+                        button.btn.btn-default.dropdown-toggle(data-toggle="dropdown" type="button")
+                            | 添加指标&nbsp&nbsp
+                            span.caret
+                        ul.dropdown-menu
+                            li
+                                a(href="javascript:;") 按钮1
+                            li
+                                a(href="javascript:;") 按钮2
+                .col-lg-4.col-md-4.col-sm-4.col-xs-4.timer_group.text-right
+                    .btn
+                        span 日
+                    .btn
+                        span 周
+                    .btn
+                        span 年
+            #traffic_chart.chart
+    .data_grid
+        table#trends.table.table-triped
+            thead
+                tr
+                    - var aH = ['','渠道', '访问量(session)', '访客量(UV)','浏览量','跳出率','平均访问深度','平均停留时长','转化次数']
+                    each vH,index in aH
+                        th=vH
+            tbody
+                - for (var x = 1; x < 9; x++)
+                    tr
+                        td
+                            input(type="checkbox")
+                        td
+                            a(href="javascript:;")
+                                | 百度
+                        td 2126
+                        td 1688
+                        td 456
+                        td 70.21%
+                        td 34.67%
+                        td 3443
+                        td 1940
+    .data_export.text-right
+        span 导出支持图形和数据
+        .btn
+            | 导出
+            i.fa.fa-share-square

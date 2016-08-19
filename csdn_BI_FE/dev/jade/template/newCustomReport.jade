@@ -1,0 +1,94 @@
+#createCP.noShow.content
+    .tit
+        h4
+            i.fa.fa-angle-right
+            | 新建自定义报告
+    hr
+    .chose
+        select
+            option 请选择
+            option 1
+            option 2
+    .operation
+        .btn
+            | 指标
+            i.fa.fa-close
+        .btn
+            | PV
+            i.fa.fa-close
+        .btn
+            | UV
+            i.fa.fa-close
+        select
+            option 请选择
+            option 1
+            option 2
+        .btn
+            i.fa.fa-plus
+    .panel.data_chart
+        .panel-heading
+            span 筛选条件
+        .panel-body
+            .row.sel_group
+                .col-lg-8.col-md-8.col-sm-8.col-xs-8
+                    select
+                        option 变量
+                        option 1
+                    select
+                        option 包含
+                        option 1
+                    input(type="text")
+                .col-lg-4.col-md-4.col-sm-4.col-xs-4.text-right
+                    .btn
+                        span 且
+                    .btn
+                        span 或
+                    .btn
+                        span 删除
+            p.condition 且
+            .row.sel_group
+                .col-lg-8.col-md-8.col-sm-8.col-xs-8
+                    select
+                        option 变量
+                        option 1
+                    select
+                        option 包含
+                        option 1
+                    input(type="text")
+                .col-lg-4.col-md-4.col-sm-4.col-xs-4.text-right
+                    .btn
+                        span 且
+                    .btn
+                        span 或
+                    .btn
+                        span 删除
+            p.condition 或
+            .row.sel_group
+                .col-lg-8.col-md-8.col-sm-8.col-xs-8
+                    select
+                        option 变量
+                        option 1
+                    select
+                        option 包含
+                        option 1
+                    input(type="text")
+                .col-lg-4.col-md-4.col-sm-4.col-xs-4.text-right
+                    .btn
+                        span 且
+                    .btn
+                        span 或
+                    .btn
+                        span 删除
+    .data_conf.text-left
+        .btn
+            | 确认
+            i.fa.fa-check
+        .btn
+            | 取消
+            i.fa.fa-close
+    .data_export.text-right
+        span 导出支持图形和数据
+        .btn
+            | 导出
+            i.fa.fa-share-square
+

@@ -1,0 +1,105 @@
+#index3_6.noShow.content
+    .row.tit
+        .col-lg-8.col-md-8.col-sm-8.col-xs-8
+            h4
+                i.fa.fa-angle-right
+                | 上下游
+        .col-lg-4.col-md-4.col-sm-4.col-xs-4.text-right
+            .btn
+                a(href="javascript:;")
+                    | 创建自定义报告
+                    i.fa.fa-pencil-square-o
+    hr
+    .panel.data_chart
+        .panel-heading.row
+            .col-lg-12.col-md-12.col-sm-12.col-xs-12.ri_tit.text-right
+                .time_toggle
+                    i.fa.fa-clock-o
+                    span.txt 选择时间对比
+                    span.hide_ico
+                .time_setting.text-left
+                    .dur_set
+                        .duration
+                            label(for="#sel_setting") 日期范围
+                            select#sel_setting.sel_setting
+                                option 自定义
+                        .timeset
+                            input#start(type="text" onfocus="setday(this)" readonly="readonly")
+                            span --
+                            input#end(type="text" onfocus="setday(this)" readonly="readonly")
+                    .dur_set
+                        .duration
+                            input(type="checkbox")
+                            label 比较日期范围
+                        .timeset
+                            input#start(type="text" onfocus="setday(this)" readonly="readonly")
+                            span --
+                            input#end(type="text" onfocus="setday(this)" readonly="readonly")
+                    .is_apply
+                        .btn
+                            | 应用
+                        .btn
+                            | 取消
+        .panel-body
+            .row.chart-tit
+                .col-lg-8.col-md-8.col-sm-8.col-xs-8
+                    .btn-group
+                        button.btn.btn-default.dropdown-toggle(data-toggle="dropdown" type="button")
+                            | 页面类型&nbsp&nbsp
+                            span.caret
+                        ul.dropdown-menu
+                            li
+                                a(href="javascript:;") 按钮1
+                            li
+                                a(href="javascript:;") 按钮2
+                .col-lg-4.col-md-4.col-sm-4.col-xs-4.timer_group.text-right
+                    .btn
+                        span 日
+                    .btn
+                        span 周
+                    .btn
+                        span 年
+            .pages.clearfix
+                .items_l.clearfix
+                    ul
+                        li 博文详情页
+                        li 博文详情页
+                        li 博文详情页
+                        li 博文详情页
+                        li 博文详情页
+                        li 博文详情页
+                .lines
+                    canvas#canvas_l(width="100")
+                .items_m.clearfix
+                    ul
+                        li 首页
+                .lines
+                    canvas#canvas_r(width="100")
+                .items_r.clearfix
+                    ul
+                        li 博文详情页
+                        li 博文详情页
+                        li 博文详情页
+                        li 博文详情页
+                        li 博文详情页
+
+    .data_grid
+        table.table.table-triped
+            thead
+                tr
+                    - var aH = ['来源', '来源次数', '页面类型','去向次数','去向']
+                    each vH,index in aH
+                        th=vH
+            tbody
+                - for (var x = 1; x < 9; x++)
+                    tr
+                        td 站内首页
+                        td 1019
+                        td 学院首页
+                        td 760
+                        td 课程详细页
+    .data_export.text-right
+        span 导出支持图形和数据
+        .btn
+            | 导出
+            i.fa.fa-share-square

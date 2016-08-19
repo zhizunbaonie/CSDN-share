@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        svg {
+            cursor: move;
+            position: absolute;
+        }
+        svg .node {
+            cursor: pointer;
+        }
+        svg .link {
+            fill: none;
+            stroke: #6ac6ff;
+            opacity: 0.8;
+            stroke-width: 2;
+        }
+        svg text.desc{
+            fill:black ;
+            font-family: fantasy;
+            font-size: 10px;
+            font-weight: bolder;
+        }
+        svg .node .ring{
+            stroke-width:8px;
+            stroke:#6ac6ff;
+            opacity: 0.2;
+            transition: opacity .6s;
+        }
+        svg .node:hover .ring,svg .node.active .ring{
+            opacity: 0.7;
+        }
+        svg text{
+            font-family: fantasy;
+            font-size: 14px;
+            color: #FFFFE0;
+        }
+
+        body{
+            background-color: #ececec;
+        }
+        .structure_chart{
+            position: relative;
+            width: 1140px;
+            margin: 30px auto;
+            box-shadow: 0 0 3px 2px #dfdfdf;
+        }
+        .kl_title{
+            padding: 18px 20px;
+            border-bottom: 1px solid #bbbbbb;
+            background-color: #FFFFFF;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 19px;
+            color: #666666;
+        }
+        .kl_str{
+            height: 940px;
+            background-color: #f8f8f8;
+        }
+        .kl_spread{
+            position: absolute;
+            top: 85px;
+            right: 25px;
+            padding: 10px 20px 10px 0;
+            width: 260px;
+            border-top: 1px solid #eeeeee;
+            border-right: 1px solid #eeeeee;
+            border-left: 1px solid #eeeeee;
+            border-bottom: 2px solid #eeeeee;
+            background-color: #FFFFFF;
+        }
+        .kl_spread span,.kl_spread a{
+            padding-left: 20px;
+            font-size: 14px;
+            vertical-align: middle;
+            line-height: 17px;
+        }
+        .kl_spread a{
+            color: #8295a3;
+            text-decoration: none;
+        }
+        .kl_spread .share{
+            color: #999999;
+        }
+        .kl_spread .d_line{
+            color: #EEEEEE;
+        }
+        .kl_spread .weibo :hover{
+            color: #d71e26;
+        }
+        .kl_spread .weixin :hover{
+            color: #34a13b;
+        }
+        .kl_spread .download :hover{
+            color: #999999;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="structure_chart">
+    <div class="kl_title">PHP知识结构</div>
+    <div class="kl_str" id="mapRow"></div>
+    <div class="kl_spread">
+        <span class="share">分享到：</span>
+        <a href="javascript:;" target="_blank" class="weibo"><i class="fa"></i></a>
+        <a href="javascript:;" target="_blank" class="weixin"><i class="fa"></i></a>
+        <span class="d_line">|</span>
+        <a href="javascript:;" target="_blank" class="download"><i class="fa"></i>下载</a>
+    </div>
+</div>
+<script type="text/javascript" src="lib/jquery-2.1.1.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="lib/d3.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/strucMap.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var options = {
+            width: 1140,
+            height: 940
+        };
+        loadMap(options);
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+#index3_5.noShow.content
+    .row.tit
+        .col-lg-8.col-md-8.col-sm-8.col-xs-8
+            h4
+                i.fa.fa-angle-right
+                | 页面路径
+        .col-lg-4.col-md-4.col-sm-4.col-xs-4.text-right
+            .btn
+                a(href="javascript:;")
+                    | 创建自定义报告
+                    i.fa.fa-pencil-square-o
+    hr
+    .panel.data_chart
+        .panel-heading.row
+            .col-lg-12.col-md-12.col-sm-12.col-xs-12.ri_tit.text-right
+                .time_toggle
+                    i.fa.fa-clock-o
+                    span.txt 选择时间对比
+                    span.hide_ico
+                .time_setting.text-left
+                    .dur_set
+                        .duration
+                            label(for="#sel_setting") 日期范围
+                            select#sel_setting.sel_setting
+                                option 自定义
+                        .timeset
+                            input#start(type="text" onfocus="setday(this)" readonly="readonly")
+                            span --
+                            input#end(type="text" onfocus="setday(this)" readonly="readonly")
+                    .dur_set
+                        .duration
+                            input(type="checkbox")
+                            label 比较日期范围
+                        .timeset
+                            input#start(type="text" onfocus="setday(this)" readonly="readonly")
+                            span --
+                            input#end(type="text" onfocus="setday(this)" readonly="readonly")
+                    .is_apply
+                        .btn
+                            | 应用
+                        .btn
+                            | 取消
+        .panel-body.clearfix.page_src_box
+            .row.chart-tit
+                .col-lg-8.col-md-8.col-sm-8.col-xs-8
+                    .btn-group
+                        button.btn.btn-default.dropdown-toggle(data-toggle="dropdown" type="button")
+                            | 人群选择&nbsp&nbsp
+                            span.caret
+                        ul.dropdown-menu
+                            li
+                                a(href="javascript:;") 按钮1
+                            li
+                                a(href="javascript:;") 按钮2
+                    .btn-group
+                        button.btn.btn-default.dropdown-toggle(data-toggle="dropdown" type="button")
+                            | 来源页面粒度&nbsp&nbsp
+                            span.caret
+                        ul.dropdown-menu
+                            li
+                                a(href="javascript:;") 按钮1
+                            li
+                                a(href="javascript:;") 按钮2
+                    .btn-group
+                        button.btn.btn-default.dropdown-toggle(data-toggle="dropdown" type="button")
+                            | 当前页面粒度&nbsp&nbsp
+                            span.caret
+                        ul.dropdown-menu
+                            li
+                                a(href="javascript:;") 按钮1
+                            li
+                                a(href="javascript:;") 按钮2
+                    .btn-group
+                        button.btn.btn-default.dropdown-toggle(data-toggle="dropdown" type="button")
+                            | 去向页面粒度&nbsp&nbsp
+                            span.caret
+                        ul.dropdown-menu
+                            li
+                                a(href="javascript:;") 按钮1
+                            li
+                                a(href="javascript:;") 按钮2
+                .col-lg-4.col-md-4.col-sm-4.col-xs-4.timer_group.text-right
+                    .btn
+                        span 日
+                    .btn
+                        span 周
+                    .btn
+                        span 年
+            .page_src
+                .level_box.clearfix
+                    .lev_top
+                        h5 起始首页
+                        span 在673k次绘画中，有648k次用户中途离开
+                    .lev_chart
+                        .chart_l.clearfix
+                            .lev0_l
+                                i.fa.fa-random
+                                span scdn.net
+                            .lev0_r
+                                .lev0_r_t
+                                .lev0_r_b
+                                    i.fa.fa-arrow-down
+                        .chart_r
+                            canvas#canvas_01(width="85")
+                .level_box.clearfix
+                    .lev_top
+                        h5
+                            |首次互动
+                            i.fa.fa-times-circle
+                        span 在673k次绘画中，有648k次用户中途离开
+                    .lev_chart
+                        ul.chart_l.clearfix
+                            li
+                                i.fa.fa-random
+                                span scdn.net
+                            li
+                                i.fa.fa-random
+                                span scdn.net
+                            li
+                                i.fa.fa-random
+                                span scdn.net
+                            li
+                                i.fa.fa-random
+                                span scdn.net
+                            li
+                                i.fa.fa-random
+                                span scdn.net
+                        .chart_r
+                            canvas#canvas_12(width="85")
+                .level_box.clearfix
+                    .lev_top
+                        h5
+                            |第2次互动
+                            i.fa.fa-times-circle
+                        span 在673k次绘画中，有648k次用户中途离开
+                    .lev_chart
+                        ul.chart_l.clearfix
+                            li
+                                i.fa.fa-random
+                                span scdn.net
+                            li
+                                i.fa.fa-random
+                                span scdn.net
+                            li
+                                i.fa.fa-random
+                                span scdn.net
+                            li
+                                i.fa.fa-random
+                                span scdn.net
+                            li
+                                i.fa.fa-random
+                                span scdn.net
+                        .chart_r
+                            canvas#canvas_12(width="85")
+                .level_box.clearfix
+                    .lev_top
+                        h5
+                            |第3次互动
+                            i.fa.fa-times-circle
+                        span 在673k次绘画中，有648k次用户中途离开
+                    .lev_chart
+                        ul.chart_l.clearfix
+                            li
+                                i.fa.fa-random
+                                span scdn.net
+                            li
+                                i.fa.fa-random
+                                span scdn.net
+                            li
+                                i.fa.fa-random
+                                span scdn.net
+                            li
+                                i.fa.fa-random
+                                span scdn.net
+                            li
+                                i.fa.fa-random
+                                span scdn.net
+                        .chart_r
+                            canvas#canvas_12(width="85")
+                .direction.clearfix
+                    .dir
+                        .go
+                            i.fa.fa-arrow-right
+                        .add
+                            i.fa.fa-plus
+                            a(href="javascript:;") 步骤
+
+    .data_export.text-right
+        span 导出支持图形和数据
+        .btn
+            | 导出
+            i.fa.fa-share-square

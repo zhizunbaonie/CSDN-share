@@ -1,0 +1,38 @@
+#index8.noShow.content
+    .row.tit
+        .col-lg-8.col-md-8.col-sm-8.col-xs-8
+            h4
+                i.fa.fa-angle-right
+                | 自定义报告
+        .col-lg-4.col-md-4.col-sm-4.col-xs-4.text-right
+            .btn
+                a(href="javascript:;")
+                    | 创建自定义报告
+                    i.fa.fa-pencil-square-o
+    hr
+    .data_cusrep
+        table.table.table-triped
+            thead
+                tr
+                    - var aH = ['名称', '创建日期', '操作']
+                    each vH,index in aH
+                        th=vH
+            tbody
+                - for (var x = 1; x < 9; x++)
+                    tr
+                        td
+                            input(type="checkbox")
+                            | 博客文章报告
+                        td 2015-06-01
+                        td
+                            a(href="javascript:;")
+                                | 删除
+                            span
+                                i.fa.fa-angle-down
+                            span
+                                i.fa.fa-angle-up
+    .data_export.text-right
+        span 导出支持图形和数据
+        .btn
+            | 导出
+            i.fa.fa-share-square

@@ -1,0 +1,686 @@
+// create by zhangwang 2015-7-16
+
+/******************** base style **********************/
+*
+    margin 0
+    padding 0
+body
+    font 14px/1.8 'microsoft yahei'
+    background #f1f2f7
+$setOvf()
+    white-space nowrap
+    overflow hidden
+    text-overflow ellipsis
+$row = 0px
+.row
+    margin-left -($row)
+    margin-right -($row)
+    [class^="col-"]
+        padding-left $row
+        padding-right $row
+/***************** variable **************************/
+$a_hover_bg = #3d4f5d
+$l_active_bg = #232f3b
+$a_h_color = #3897c5
+
+
+/***************** scdn-toolbar **************************/
+.csdn-toolbar
+    position fixed
+    width 100%
+    top 0
+    z-index 9
+    .container
+        width auto
+        .logo .img
+            background none
+            &:before
+                content "BI"
+                font-size 20px
+                line-height 40px
+                color #fff
+
+/******************* left nav ************************/
+.left-nav
+    position fixed
+    width 240px
+    height 100%
+    top 40px
+    background #33414e
+    color #fff
+    ul
+        font-size 16px
+        li
+            line-height 40px
+            border-bottom 1px solid #2e3c47
+            &.active
+                background $l_active_bg
+                color $a_h_color
+            a
+                display block
+                padding 5px 10px 5px 34px
+                color #ffffff
+                cursor pointer
+                &:hover,&.active
+                    background $a_hover_bg
+                    text-decoration none
+                    i
+                        color $a_h_color
+                    span i
+                        color #fff
+                i
+                    padding-right 20px
+                span
+                    display inline-block
+                    float right
+            ul
+                font-size 14px
+                padding-left 20px
+                display none
+                span
+                    float right
+                a
+                    &:hover
+                        color $a_h_color
+                    &.active
+                        color $a_h_color
+                        background #232f3b
+/******************* content top bar ************************/
+.content_bar
+    background #ffffff
+    padding: 40px 10px 0 240px;
+    ul,ol
+        margin 8px 0 0
+    ul
+        overflow hidden
+        li
+            float left
+            padding 0 30px
+            a
+                color #5d5d5d
+                padding 13px 23px
+                line-height 52px
+                font-size 16px
+                text-decoration none
+                &:hover
+                    border-bottom 3px solid #3897c5
+            &.active
+                a
+                    border-bottom 3px solid #3897c5
+
+
+    ol
+        li
+            display inline-block
+            padding 14px 0
+            color #999999
+            +li
+                &:before
+                    content ">"
+                    padding 0 3px
+            a
+                font-size 6px
+                text-decoration none
+                color inherit
+
+/******************* content wrap ************************/
+.conwrap
+    padding-left 240px
+    padding-bottom 40px
+.noShow
+    display none
+/******************* btn & btn group ************************/
+.btn
+    background #33414e
+    color #fff
+    padding 4px 15px
+    margin-left 20px
+    i
+        padding-left 10px
+.btn-group
+    margin-right 22px
+    &:last-child
+        margin-right 0
+    .btn
+        background #f1f2f7
+        color #333333
+        padding 4px 15px
+        font-size 12px
+        /*width 100px*/
+.clearfix
+    &:after
+        width 0
+        height 0
+        display block
+        content "."
+        clear both
+        visibility hidden
+
+.content
+    padding-right 9px
+    overflow-x hidden
+    .tit,.data_chart,.data_grid,.data_export,.data_cusrep,.chose,.operation,.data_conf
+        margin-left 40px
+    .tit
+        margin-top 10px
+        h4
+            font-size 23px
+            line-height 30px
+            color #323f4f
+            i
+                padding-right 18px
+        .btn
+            height 30px
+            margin 10px 0
+            a
+                color #ffffff
+                text-decoration none
+                &:hover
+                    color #d58512
+
+    hr
+        background #e3e3ed
+        height 2px
+        margin-top 0
+
+    .data_chart
+        border 1px solid #d3d8de
+        .panel-heading
+            height 40px
+            font-size 15px
+            background #3897c5
+            color #fff
+            line-height 40px
+            padding 0 15px
+            .ri_tit
+                position relative
+                i
+                    padding 0 5px
+                    color #ffffff
+                .txt
+                    margin-right 25px
+                .hide_ico
+                    display block
+                    position absolute
+                    top 15px
+                    right 0px
+                    width 0
+                    height 0
+                    border-left 6px solid #fff
+                    border-top 6px solid transparent
+                    border-bottom 6px solid transparent
+                    border-right 6px solid transparent
+                .show_ico
+                    display block
+                    position absolute
+                    top 18px
+                    right 0px
+                    width 0
+                    height 0
+                    border-top 6px solid #fff
+                    border-left 6px solid transparent
+                    border-right 6px solid transparent
+                    border-bottom 6px solid transparent
+                .time_setting
+                    display none
+                    position absolute
+                    top 40px
+                    right -15px
+                    /*width 100%*/
+                    /*height 200px*/
+                    border-bottom 1px solid #dadada
+                    border-left 1px solid #dadada
+                    background #f7f7f7
+                    color #5b5b5b
+                    overflow hidden
+                    z-index 1
+                    padding 0 15px
+                    .dur_set,.is_apply
+                        padding 15px 0
+                    .dur_set
+                        border-bottom 1px dashed #666666
+                        .duration
+                            color #5b5b5b
+                            label
+                                padding-right 20px
+                                font-weight 100
+                            select
+                                width 150px
+                        .timeset
+                            input
+                                width 100px
+                                &:first-child
+                                    margin-right 20px
+                                &:last-child
+                                    margin-left 20px
+                    .is_apply
+                        .btn
+                            background transparent
+                            margin 0px
+                            &:first-child
+                                border 1px solid #adb2b5
+                                color #6d6d6f
+                            &:last-child
+                                color #999997
+            .sel_chart
+                button
+                    width 100px
+                    border 0
+                    background transparent
+                    text-align left
+                    .txt
+                        color #fefefe
+                        padding-right 10px
+                    .caret
+                        color #ffffff
+                ul li a
+                    color #3897c5
+
+
+    .panel-body
+        .chart-tit
+            margin-bottom 10px
+        label
+            font-size 12px
+            color #7d7d7d
+            font-weight normal
+            padding-right 5px
+        .timer_group
+            padding-right 4px
+            .btn
+                padding 4px 7px
+                background #f1f2f7
+                height 30px
+                span
+                    color #979998
+                    font-size 16px
+        .chart
+            height 400px
+
+        .pages>.items_l,.pages>.items_m,.pages>.items_r,.lines{
+            float:left;
+        }
+        .pages ul li
+            list-style none
+            width 100px
+            height 30px
+            color #fff4f4
+            margin 15px 0
+            text-align center
+            font-size 14px
+            padding 2px
+        .items_l ul li
+            background #b6a2df
+        .items_m ul li
+            background #fa8564
+        .items_r ul li
+            background: #1fb5ac
+
+
+
+        /* 转化漏斗页面style */
+        .funnel_box
+            width 100%
+            .left,.mid,.right
+                display inline-block
+            .left,.right
+                width 20%
+            .mid
+                width 30%
+            .shop_desc
+                .left, .mid, .right
+                    vertical-align bottom
+                .left span, .right span
+                    color #222222
+                    font-size 20px
+                    font-weight bold
+                .left
+                    padding-right 10px
+                    text-align right
+                .mid
+                    .left_icon,.tips,.right_icon
+                        float left
+                    .left_icon
+                        width 10%
+                        i
+                            font-size 50px
+                            color #9cdf8f
+                            padding 65px 10px 0
+                    .tips
+                        width 80%
+                        border 1px solid #dddddd
+                        text-align center
+                        span
+                            font-size 20px
+                            &:nth-child(1)
+                                display block
+                                margin-top 10px
+                                color #212121
+                            &:nth-child(2)
+                                color #202135
+                                font-weight bold
+                            &:nth-child(3)
+                                color #5f4a75
+                        .data_bar
+                            width 90%
+                            margin 5px auto 20px
+                            .bar_l
+                                display inline-block
+                                height 10px
+                                background #9de090
+                            .bar_r
+                                display inline-block
+                                height 10px
+                                background #e06b7b
+
+                    .right_icon
+                        width 10%
+                        text-align right
+                        i
+                            font-size 50px
+                            color #e16c7e
+                            padding 65px 10px 0
+                .right
+                    padding-left 10px
+                    text-align left
+            .shop_data
+                .left, .mid, .right
+                    vertical-align top
+                .left
+                    padding-right 10px
+                    text-align right
+                    table tr td
+                        &:first-child  label
+                            float left
+                            color #5b5b5b
+                .mid
+                    position relative
+                    .funnel_bg
+                        width 50%
+                        height 240px
+                        margin 0 auto
+                    .data_per
+                        position absolute
+                        top 65px
+                        left 25%
+                        width 50%
+                        text-align center
+                        span
+                            font-size 17px
+                            &:nth-child(1)
+                                display block
+                                color #232122
+                                font-weight bold
+                            &:nth-child(1)
+                                color #666666
+                .right
+                    text-align right
+            .pay_success .shop_desc .mid .tips span:last-child
+                font-size 17px
+
+
+
+
+
+
+
+    /* 页面路径样式 */
+    .page_src_box
+        padding-bottom 0
+        .page_src
+            overflow-x auto
+            overflow-y hidden
+            white-space:nowrap
+            .level_box
+                display inline-block
+                width 267px
+                .lev_top
+                    h5
+                        color #333333
+                        font-size 12px
+                        height 15px
+                        line-height 15px
+                        i
+                            padding-left 5px
+                            color #aeaeae
+                            font-size 13px
+                    span
+                        font-size 11px
+                        color #adadad
+                .lev_chart
+                    height 200px
+                    margin-top 15px
+                    i
+                        padding 5px 10px
+                    .chart_l
+                        list-style none
+                        margin 0
+                        padding 0
+                        float left
+                        width 182px
+                        height 200px
+                        .lev0_l
+                            float left
+                            width 150px
+                            height 200px
+                            background #bee7e9
+                            span
+                                color #676767
+                                font-size 15px
+                        .lev0_r
+                            float right
+                            width 32px
+                            height 200px
+                            .lev0_r_t
+                                width 32px
+                                height 10px
+                                background #d8e4e4
+                            .lev0_r_b
+                                width 15px
+                                height 190px
+                                line-height 190px
+                                text-align center
+                                background -webkit-gradient(linear, 0 0, 0 100%, from(#e6ceac), to(#fefdfb))
+                                background -moz-linear-gradient(top, #e6ceac,#fefdfb)
+                                /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6ceac,endColorstr=#fefdfb,grandientType=0)*/
+                                i
+                                    color #ffffff
+                                    padding 0
+                        li
+                            height 25px
+                            line-height 20px
+                            border-top 5px solid #bee7e9
+                            border-right 3px solid #e6ceac
+                            margin-bottom 15px
+                            span
+                                color #676767
+                                font-size 15px
+                    .chart_r
+                        float right
+
+            .direction
+                display inline-block
+                width 100px
+                .dir
+                    margin 88px 0
+                    .go
+                        width 50px
+                        border 1px dashed #d2d9df
+                        margin 0 auto
+                        text-align center
+                        i
+                            color #d4d9df
+                            font-size 30px
+                            line-height 50px
+                            height 50px
+                    .add
+                        width 50px
+                        margin 0 auto
+                        i
+                            text-align center
+                            color #c8c8c8
+                            font-size 13px
+                            padding-right 5px
+                            line-height 20px
+                        a
+                            color #3697c4
+                            font-size 13px
+
+    /*.page_flow
+        border 1px solid #0f0f0f
+        div
+            float left
+            border 1px solid red*/
+    /*.panel-footer
+        height 18px
+        background #3897c5
+        border-bottom-left-radius 4px
+        border-bottom-right-radius 4px*/
+
+    .data_grid,.data_cusrep
+        background #ffffff
+        border 1px solid #d1d9dc
+        .table
+            thead tr th,tbody tr td
+                text-align center
+                font-size 10px
+            thead tr
+                height 40px
+                background #3897c5
+                color #ffffff
+            tbody tr
+                color #333333
+    .data_cusrep
+        .table
+            thead tr th,tbody tr td
+                text-align left
+                padding-left 60px
+                width 10%
+            thead tr th
+                &:first-child
+                    padding-left 130px
+            tbody tr td
+                input[type="checkbox"]
+                    margin-right 30px
+                a
+                    text-decoration none
+                    color #323232
+                    &:hover
+                        color #1b6d85
+                span
+                    border 1px solid #e4e4ee
+                    margin-left 13px
+                    &:first-child
+                        margin-left 26px
+                    i
+                        width 20px
+                        height 20px
+                        text-align center
+                        vertical-align middle
+                        padding-top 2px
+
+    .chose,.operation,.data_conf
+        margin-top 10px
+    .chose,.operation
+        select,.btn
+            width 180px
+            height 40px
+            margin 4px 0
+            margin-right 20px
+        select
+            border 1px solid #e1e4ed
+            border-radius 4px
+            padding-left 5px
+    .operation
+        margin-bottom 15px
+        .btn
+            text-align center
+            line-height 30px
+            position relative
+            .fa-close
+                position absolute
+                color #aeaeae
+                font-size 13px
+                width 18px
+                height 18px
+                border-radius 50%
+                background #ffffff
+                top 4px
+                right 5px
+                padding 2px 3px
+                box-shadow 1px 0 1px #fff
+                -webkit-box-shadow 1px 0 1px #fff
+                -moz-box-shadow 1px 0 1px #fff
+            .fa-plus
+                color #c2c2c2
+                padding 5px
+                font-size 20px
+            &:nth-child(1)
+                background #1fb5ac
+            &:nth-child(2)
+                background #9972b5
+            &:nth-child(3)
+                background #feb45d
+            &:last-child
+                background #ffffff
+                width 45px
+                border 1px dashed #dcdcda
+                padding 5px
+
+    .sel_group
+        margin-left 10px
+        select,input,.btn
+            background #f1f2f7
+            height 30px
+        select
+            width 135px
+            margin-right 30px
+            border 1px solid #e4e4ec
+            border-radius 2px
+            -webkit-border-radius 2px
+            -moz-border-radius 2px
+            color #313131
+            font-size 12px
+        input[type="text"]
+            width 200px
+            background #f1f2f7
+            border 1px solid #e3e4e9
+        .btn
+            padding 4px 10px
+            span
+                color #979998
+                font-size 16px
+
+
+    .condition
+        margin-left 10px
+        margin-top 10px
+        color #acacac
+        font-size 15px
+    .data_conf
+        .btn
+            width 70px
+            height 30px
+            margin 0 25px 0 0
+            font-size 12px
+            &:nth-child(1)
+                background #33414e
+                color #fffefb
+            &:nth-child(2)
+                background #f1f2f7
+                color #333333
+                border 1px solid #d4d9dd
+            .fa-check
+                color #1fc71c
+            .fa-close
+                color #ef5152
+
+    .data_export
+        padding-top 40px
+        font-size 12px
+        span
+            color #333331
+            vertical-align middle
+        .btn
+            height 30px
+            margin-left 15px

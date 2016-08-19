@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>11-布局</title>
+</head>
+<body>
+<script src="lib/d3.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+    //数据:这样的值是不能直接绘图的。例如绘制饼状图的一个部分，需要知道一段弧的起始角度和终止角度，这些值都不存在于数组 dataset 中。
+    var dataset = [ 30 , 10 , 43 , 55 , 13 ];
+    //因此，需要用到布局，布局的作用就是:计算出适合于作图的数据(数据转换)
+    //返回值赋给变量 pie，此时 pie 可以当做函数使用。
+    var pie = d3.layout.pie();
+    //将数组 dataset 作为 pie() 的参数，返回值给 piedata。如此一来，piedata 就是转换后的数据。
+    var piedata = pie(dataset);
+    console.log(piedata);
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>1-用D3更改HelloWorld</title>
+</head>
+<body>
+<div class="div1">
+    <p>Hello World 1</p>
+    <p>Hello World 2</p>
+</div>
+<div class="div2">
+    <p>Hello World 1</p>
+    <p>Hello World 2</p>
+</div>
+<script src="lib/d3.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+    /*
+    *
+     <canvas> 标记和 SVG 以及 VML 之间的差异
+
+     <canvas> 标记和 SVG 以及 VML 之间的一个重要的不同是，<canvas> 有一个基于 JavaScript 的绘图 API，而 SVG 和 VML 使用一个 XML 文档来描述绘图。
+
+     这两种方式在功能上是等同的，任何一种都可以用另一种来模拟。从表面上看，它们很不相同，可是，每一种都有强项和弱点。例如，SVG 绘图很容易编辑，只要从其描述中移除元素就行。
+
+     要从同一图形的一个 <canvas> 标记中移除元素，往往需要擦掉绘图重新绘制它。
+
+     * */
+
+     //选择<body>中所有的<p>，其文本内容为 www.ourd3js.com，选择集保存在变量 p 中
+    var p1 = d3.select(".div1")
+            .selectAll("p")
+            .text("www.ourd3js.com");
+    //修改段落的颜色和字体大小
+    p1.style("color","red")
+        .style("font-size","72px");
+
+    d3.select(".div2")
+        .selectAll("p")
+        .text("www.ourd3js.com")
+        .style("color","red")
+        .style("font-size","72px");
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>12-饼状图制作</title>
+</head>
+<body>
+<script src="lib/d3.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+    /*1.画布*/
+    var width = 400;
+    var height = 400;
+    var svg = d3.select("body")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+    /*2.数据*/
+    var dataset = [ 30 , 10 , 43 , 55 , 13 ];
+
+    /*3.布局，转换所需数据*/
+    var pie = d3.layout.pie();
+
+    /*4.获得绘图所需数据*/
+    var piedata = pie(dataset);
+
+    /* 在画布上添加相应的图形 */
+    var outerRadius = 150; //外半径
+    var innerRadius = 0; //内半径，为0则中间没有空白
+
+    //作图所需：生成器-->弧生成器
+    //弧生成器返回的结果赋值给arc。此时，arc 可以当做一个函数使用，把 piedata 作为参数传入，即可得到路径值
+    var arc = d3.svg.arc()  //弧生成器
+            .innerRadius(innerRadius)   //设置内半径
+            .outerRadius(outerRadius);  //设置外半径
+
+    var color = d3.scale.category10();   //有十种颜色的颜色比例尺
+
+    var arcs = svg.selectAll("g")
+            .data(piedata)
+            .enter()
+            .append("g")
+            .attr("transform","translate("+ (width/2) +","+ (width/2) +")");
+
+    arcs.append("path")
+            .attr("fill",function(d,i){
+                return color(i);
+            })
+            .attr("d",function(d){  //路径值的属性名称是 d，调用弧生成器后返回的值赋值给它
+                return arc(d);   //调用弧生成器，得到路径值
+            });
+    //弧线中心添加文本
+    arcs.append("text")
+            .attr("transform",function(d){
+                return "translate(" + arc.centroid(d) + ")";
+            })
+            .attr("text-anchor","middle")
+            .text(function(d){
+                return d.data;
+            });
+    console.log(dataset);
+    console.log(piedata);
+</script>
+</body>
+</html>
